@@ -4,6 +4,9 @@ import org.djodjo.json.JsonArray;
 import org.djodjo.json.JsonElement;
 import org.djodjo.json.JsonObject;
 import org.elasticsearch.action.ListenableActionFuture;
+import org.elasticsearch.action.admin.indices.create.CreateIndexRequestBuilder;
+import org.elasticsearch.action.admin.indices.exists.indices.IndicesExistsResponse;
+import org.elasticsearch.action.admin.indices.mapping.put.PutMappingResponse;
 import org.elasticsearch.action.index.IndexRequestBuilder;
 import org.elasticsearch.action.index.IndexResponse;
 import org.elasticsearch.client.transport.TransportClient;
@@ -25,8 +28,7 @@ import java.util.List;
 public class OpenDataSync {
 
 
-    //TODO use WS to automate the data sets download
-    static TransportClient tc= null;
+     static TransportClient tc= null;
 
     static final String indexName = "poipointer";
     static final String documentType = "poi";
@@ -67,6 +69,19 @@ public class OpenDataSync {
             System.out.println("node: " + n);
         }
 
+        //--set geo mapping
+        final IndicesExistsResponse res = tc.admin().indices().prepareExists(indexName).execute().actionGet();
+        if (!res.isExists())
+        {
+            CreateIndexRequestBuilder cirb =  tc.admin().indices().prepareCreate(indexName);
+            for(String dataset:typeMap.values()) {
+                cirb.addMapping(dataset,"{\"properties\":{\"geometry\":{\n" +
+                        "\"properties\":{\"coordinates\":{\n" +
+                    "\"type\": \"geo_point\"\n" +
+                    "}}}}}");
+                }
+                cirb.execute().actionGet();
+        }
 
         for(String dataset:typeMap.keySet()) {
             processDataSet(dataset);
