@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="jjson-core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jjson-core.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/json-wrapper.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
