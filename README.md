@@ -8,12 +8,15 @@ Info
 elastic search needs to be set and running
 
 
-Query Distance Example
+Examples
 --
+Query Distance
+
+```
 curl -XPOST 'http://127.0.0.1:9200/poipointer/_search' -d '
 {
     "query" : {
-"filtered": {
+    "filtered": {
         "filter" : {
             "geo_distance" : {
                 "distance" :"1km",
@@ -24,3 +27,8 @@ curl -XPOST 'http://127.0.0.1:9200/poipointer/_search' -d '
 }
 }
 '
+```
+
+
+
+
