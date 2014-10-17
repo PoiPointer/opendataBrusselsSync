@@ -48,8 +48,8 @@ public class OpenDataSync {
         typeMap.put("museums0", "museum");
         typeMap.put("cultural-places", "culturalPlace");
         typeMap.put("comic-book-route", "comicBookRoute");
-        typeMap.put("art-heritage-of-regional-roads-monuments", "heritageMonuments");
-        typeMap.put("art-heritage-of-regional-roads-fountains0", "heritageFountains");
+        typeMap.put("art-heritage-of-regional-roads-monuments", "heritageMonument");
+        typeMap.put("art-heritage-of-regional-roads-fountains0", "heritageFountain");
     }
 
     public static void main(String[] args) {
