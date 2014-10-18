@@ -1,5 +1,6 @@
 package poipointer.model;
 
+import org.djodjo.json.JsonArray;
 import org.djodjo.json.JsonObject;
 import org.djodjo.json.wrapper.JsonObjectWrapper;
 
@@ -21,6 +22,19 @@ public class GeoJson extends JsonObjectWrapper {
 
     public JsonObject getProperties() {
         return getJson().optJsonObject("properties");
+    }
+
+    public JsonObject getGeometry() {
+        return getJson().optJsonObject("geometry");
+    }
+
+    public JsonArray getCoordinates() {
+        return getGeometry().getJsonArray("coordinates");
+    }
+
+    public GeoJson setCoordinates(JsonArray coordinates) {
+        getGeometry().put("coordinates", coordinates);
+        return this;
     }
 
     public GeoJson setGeometry(JsonObject geometry) {

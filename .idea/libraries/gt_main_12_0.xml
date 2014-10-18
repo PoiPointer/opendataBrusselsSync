@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="gt-main-12.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/gt-main-12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

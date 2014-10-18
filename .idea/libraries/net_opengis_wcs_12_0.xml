@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="net.opengis.wcs-12.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/net.opengis.wcs-12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
