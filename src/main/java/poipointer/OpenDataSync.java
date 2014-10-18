@@ -24,7 +24,6 @@ import org.opengis.referencing.operation.MathTransform;
 import org.opengis.referencing.operation.TransformException;
 import poipointer.model.GeoJson;
 
-import org.opengis.referencing.operation.MathTransformFactory;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -81,8 +80,8 @@ public class OpenDataSync {
         }
 
         //--set geo mapping
-        final IndicesExistsResponse res = tc.admin().indices().prepareExists(indexName).execute().actionGet();
-        if (!res.isExists())
+       // final IndicesExistsResponse res = tc.admin().indices().prepareExists(indexName).execute().actionGet();
+       // if (!res.isExists())
         {
             CreateIndexRequestBuilder cirb =  tc.admin().indices().prepareCreate(indexName);
             for(String dataset:typeMap.values()) {
@@ -94,14 +93,13 @@ public class OpenDataSync {
             cirb.execute().actionGet();
         }
 
-//        for(String dataset:typeMap.keySet()) {
-//            processOpendataBrusselsDataSet(dataset);
-//        }
+        for(String dataset:typeMap.keySet()) {
+            processOpendataBrusselsDataSet(dataset);
+        }
 
         processUrbisDataSet();
 
     }
-
 
     private static void processOpendataBrusselsDataSet(String dataSet) {
         System.out.println("Processing: " + dataSet);
@@ -164,7 +162,7 @@ public class OpenDataSync {
             CoordinateReferenceSystem utmCrs = null;
 
             utmCrs = CRS.decode("EPSG:31370");
-            ;
+
             MathTransform mathTransform = CRS.findMathTransform(utmCrs, DefaultGeographicCRS.WGS84, false);
             Point p1 = (Point) JTS.transform(p, mathTransform);
             res.put(p1.getCoordinate().y).put(p1.getCoordinate().x);
@@ -211,7 +209,7 @@ public class OpenDataSync {
 
                 geoJson.getProperties()
                         .put("type", "culturalPlace")
-                        .put("name", feature.asJsonObject().optJsonObject("properties").get("TXT_FRE"))
+                        .put("name", feature.asJsonObject().optJsonObject("properties").get("TXT_FRE").toString().toLowerCase())
                         .put("recordId", feature.asJsonObject().optString("id"))
                 ;
                 System.out.println("Result: " + geoJson.toString());

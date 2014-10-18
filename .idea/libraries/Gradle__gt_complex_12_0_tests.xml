@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: gt-complex-12.0-tests">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/gt-complex-12.0-tests.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

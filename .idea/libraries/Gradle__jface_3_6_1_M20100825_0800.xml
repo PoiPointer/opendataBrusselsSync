@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: jface-3.6.1.M20100825-0800">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jface-3.6.1.M20100825-0800.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

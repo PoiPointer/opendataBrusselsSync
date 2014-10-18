@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: netcdf-4.3.16">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/netcdf-4.3.16.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

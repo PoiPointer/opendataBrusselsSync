@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: miglayout-3.7-swing">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/miglayout-3.7-swing.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

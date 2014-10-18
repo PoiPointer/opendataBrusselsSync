@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: jjson-core">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/jjson-core.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: batik-transcoder-1.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/libs/batik-transcoder-1.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
