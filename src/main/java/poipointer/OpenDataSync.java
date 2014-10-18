@@ -80,8 +80,8 @@ public class OpenDataSync {
         }
 
         //--set geo mapping
-       // final IndicesExistsResponse res = tc.admin().indices().prepareExists(indexName).execute().actionGet();
-       // if (!res.isExists())
+       final IndicesExistsResponse res = tc.admin().indices().prepareExists(indexName).execute().actionGet();
+       if (!res.isExists())
         {
             CreateIndexRequestBuilder cirb =  tc.admin().indices().prepareCreate(indexName);
             for(String dataset:typeMap.values()) {
@@ -237,6 +237,17 @@ public class OpenDataSync {
         final IndexResponse response =     laf.actionGet();
         System.out.println( "======= Written idx:" + response.getId() + " :: " + response.getIndex() + " :: " + response.getType() + " :: " + response.getVersion() + " =======");
     }
+
+
+    private static void putURLs() {
+
+    }
+
+    private static void putIMGs() {
+
+    }
+
+
 
 
     private static String addName(GeoJson geoJson) {
